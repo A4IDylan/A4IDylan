@@ -1,0 +1,9 @@
+- name: list cron jobs
+  hosts: ***LINUX***
+    tasks:
+        - command:
+            cmd: cat /etc/crontab
+        register: result
+        - copy:
+            dest: /tmp/crontabs.csv
+            msg: list of crontabs jobs are available on /tmp/
